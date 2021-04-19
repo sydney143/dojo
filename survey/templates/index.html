@@ -9,10 +9,18 @@
 <body>
     <h1>Index Page</h1>
 <h3>Info</h3>
+{% with messages = get_flashed_messages() %}     
+    {% if messages %}                            
+        {% for message in messages %}          
+            <p>{{message}}</p>                   
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
     <form action='/result' method='post'>
-    Your Name: <input type='text' name='Your_Name'>
-    Dojo Location: <input type='text' name='Dojo_location'>
-    Favorite language: <input type='text' name='Favorite_language'>
+    Your Name: <input type='text' name='name'>
+    Dojo Location: <input type='text' name='location'>
+    Favorite language: <input type='text' name='language'>
     <input type='submit' value='info'>
 </form>
 

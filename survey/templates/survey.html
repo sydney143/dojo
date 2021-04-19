@@ -9,9 +9,11 @@
 <h1>Show Page</h1>
 <h3>Info Submitted:</h3>
 <body>
-    <p>Your Name: {{ Your_Name_on_template }}</p>
-    <p>Dojo Location: {{ Dojo_location_on_template }}</p>
-    <p>Favorite language: {{ Favorite_language_on_template }}</p>
+{% for one_survey in all_survey%}
+    <p>Your Name: {{ one_survey ['name'] }}</p>
+    <p>Dojo Location: {{ one_survey ['location'] }}</p>
+    <p>Favorite language: {{ one_survey ['language'] }}</p>
+{%endfor%}
 
 </body>
 </html>
